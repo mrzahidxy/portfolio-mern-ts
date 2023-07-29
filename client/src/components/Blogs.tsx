@@ -5,6 +5,7 @@ type Blog = {
   id: number;
   image: string;
   title: string;
+  link: string;
   description: string;
 };
 
@@ -13,6 +14,7 @@ const data: Blog[] = [
     id: 1,
     image: image,
     title: "Work 1",
+    link: "",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?",
   },
@@ -20,6 +22,7 @@ const data: Blog[] = [
     id: 2,
     image: image,
     title: "Work 2",
+    link: "",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?",
   },
@@ -27,6 +30,7 @@ const data: Blog[] = [
     id: 3,
     image: image,
     title: "Work 3",
+    link: "",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?",
   },
@@ -43,6 +47,7 @@ function Blogs() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
+        
         {data.map((project) => (
           <FeatureCard key={project.id} project={project} />
         ))}

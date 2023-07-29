@@ -3,7 +3,7 @@ type Props = {
     id: number;
     image: string;
     title: string;
-    technology: string;
+    technology?: string;
     link: string;
     description: string;
   };
@@ -30,7 +30,7 @@ const FeatureCard: React.FC<Props> = ({ project }) => {
       </div>
       <div className="p-4">
         <h2 className="text-xl font-bold mb-2">{project.title}</h2>
-        <h4 className="font-semibold">{project.technology}</h4>
+        
         <p className="text-gray-700 text-sm">{project.description}</p>
       </div>
     </a>
