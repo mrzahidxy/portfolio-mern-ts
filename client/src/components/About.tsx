@@ -15,11 +15,13 @@ interface SkillData {
 }
 
 const data: SkillData[] = [
-  { name: "HTML & CSS", skill: 0.8, color: "#FF6384" },
-  { name: "JavaScript", skill: 0.6, color: "#36A2EB" },
-  { name: "ReactJS", skill: 0.6, color: "#FFCE56" },
-  { name: "NextJS", skill: 0.6, color: "#4BC0C0" },
-  { name: "TailwindCSS", skill: 0.6, color: "#9966FF" },
+  { name: "HTML CSS", skill: 0.8, color: "#FF6384" },
+  { name: "Tailwind", skill: 0.8, color: "#9966FF" },
+  { name: "JS", skill: 0.6, color: "#36A2EB" },
+  { name: "TS", skill: 0.6, color: "#36A2EB" },
+  { name: "React", skill: 0.8, color: "#FFCE56" },
+  { name: "Next", skill: 0.6, color: "#4BC0C0" },
+
 ];
 
 const CustomYAxisTick = ({ x, y, payload }: any) => {
@@ -48,22 +50,20 @@ const About: React.FC = () => {
     <div
       id="about"
       data-scroll-section
-      className="h-screen grid lg:grid-cols-2 gap-20"
+      className="lg:h-screen grid lg:grid-cols-2 gap-20"
     >
-      <div className="h-[600px] lg:h-2/3 rounded-md bg-transparent lg:bg-gray-800 relative">
+      <div className="h-[350px] lg:h-[600px] flex justify-center rounded-md bg-transparent lg:bg-gray-800 lg:relative">
         <img
           src={Image}
           alt="image"
-          className="h-full md:w-full object-fit rounded-md overflow-hidden absolute left-14 top-14 lobject-cover"
+          className="h-full rounded-md overflow-hidden lg:absolute lg:left-14 top-14"
         />
       </div>
 
       <div className="space-y-12">
         <div className="space-y-8 text-justify">
           <p>
-            As a dedicated software developer 🧔, I have expertise in JavaScript
-            and its supporting technologies that solve real-world problems
-            through code ✨. I'm learning industry-standard software development
+           I'm learning industry-standard software development
             from my current workplace, which I will use to build world-class
             products. 🏆
           </p>
@@ -78,7 +78,7 @@ const About: React.FC = () => {
             <XAxis
               dataKey="name"
               className="text-[9px] md:text-lg"
-              style={{ fill: "#1e90ff", fontWeight: 500 }}
+              style={{ fill: "#1e90ff", fontWeight: 500, fontSize: "12px" }}
             />
             <YAxis tick={<CustomYAxisTick />} />
             <Bar dataKey="skill" fill="#8884d8" isAnimationActive={false}>

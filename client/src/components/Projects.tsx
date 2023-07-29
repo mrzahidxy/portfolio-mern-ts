@@ -1,41 +1,14 @@
-import React from "react";
-import image from "../assets/image/about.png";
+import { projects } from "../JSON/project.json";
 import FeatureCard from "./common/FeatureCard";
 
-type Project = {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-};
-
 const Projects: React.FC = () => {
-  const projects: Project[] = [
-    {
-      id: 1,
-      image: image,
-      title: "Work 1",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?",
-    },
-    {
-      id: 2,
-      image: image,
-      title: "Work 2",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?",
-    },
-    {
-      id: 3,
-      image: image,
-      title: "Work 3",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?",
-    },
-  ];
 
   return (
-    <div id="projects" data-scroll-section className="lg:h-screen flex flex-col space-y-20 pt-40">
+    <div
+      id="projects"
+      data-scroll-section
+      className="lg:h-screen flex flex-col space-y-20 pt-40"
+    >
       <div className="flex flex-col items-center space-y-6">
         <h3 className="text-blue-500 text-3xl lg:text-5xl font-bold">
           Imagine and Create.

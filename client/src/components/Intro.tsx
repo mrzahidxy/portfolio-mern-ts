@@ -3,7 +3,11 @@ import ComputerCanvas from "./ComputerCanvas";
 
 function Intro() {
   return (
-    <div id="intro" data-scroll-section className="h-screen grid lg:grid-cols-2">
+    <div
+      id="intro"
+      data-scroll-section
+      className="h-screen grid lg:grid-cols-2"
+    >
       <div className="col-span-1 flex flex-col justify-center gap-5">
         <span className="text-xl md:text-3xl">Hello, This is</span>
         <h1 className="text-4xl md:text-5xl font-bold">Zahid Hasan</h1>
@@ -16,7 +20,9 @@ function Intro() {
           </div>
         </div>
         <p className="text-base md:text-lg">
-          Usually, I spend my days playing with JavaScript. 🤗
+          As a dedicated software developer 🧔, I have expertise in JavaScript
+          and its supporting technologies that solve real-world problems through
+          code ✨.
         </p>
       </div>
 

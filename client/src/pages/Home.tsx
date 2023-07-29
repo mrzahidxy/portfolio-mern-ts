@@ -1,6 +1,5 @@
 import React from "react";
 import About from "../components/About";
-import Blogs from "../components/Blogs";
 import Contact from "../components/Contact";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
@@ -15,7 +14,6 @@ const Home: React.FC<HomeProps> = () => {
       <Intro />
       <About />
       <Projects />
-      <Blogs />
       <Contact />
     </div>
   );

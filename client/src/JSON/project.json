@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "image": "",
+      "title": "Ecommerce & Admin Dashboard",
+      "link": "https://amarbebsha-ecommerce.vercel.app/",
+      "technology": "NextJS, NextAuth TailwindCSS, ExpressJS",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?"
+    },
+    {
+      "id": 2,
+      "image": "",
+      "title": "Ecommerce",
+      "link": "https://procharok-ecommerce.vercel.app/",
+      "technology": "ReactJS, Redux, Styled Component, ExpressJS",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?"
+    },
+    {
+      "id": 3,
+      "image": "",
+      "title": "Movie, Tv Series Directory",
+      "link": "https://letswatch-entertainment.vercel.app/",
+      "technology": "ReactJS, Public API",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?"
+    }
+  ]
+}
