@@ -73,7 +73,7 @@ const Contact = () => {
   return (
     <div id="contact" className="lg:h-screen grid lg:grid-cols-2 pt-60 gap-20">
       <div className="space-y-8">
-        <h3 className="text-5xl font-bold text-blue-500">
+        <h3 className="text-4xl font-bold text-blue-500">
           Let's discuss your project.
         </h3>
         <div className="flex flex-col text-lg font-medium space-y-4">

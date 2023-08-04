@@ -2,27 +2,27 @@
   "projects": [
     {
       "id": 1,
-      "image": "",
+      "image": "https://imgtr.ee/images/2023/08/04/f3bd788958e989ef035b112f8dae0367.png",
       "title": "Ecommerce & Admin Dashboard",
       "link": "https://amarbebsha-ecommerce.vercel.app/",
       "technology": "NextJS, NextAuth TailwindCSS, ExpressJS",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?"
+      "description": "By leveraging the power of Next.js, NextAuth, Tailwind CSS, and Express.js, I created a dynamic and modern web application that aims to solve real-world problems and provide an exceptional user experience."
     },
     {
       "id": 2,
-      "image": "",
+      "image": "https://imgtr.ee/images/2023/08/04/5fc842fb0542e8053c11c2fec235987f.png",
       "title": "Ecommerce",
       "link": "https://procharok-ecommerce.vercel.app/",
       "technology": "ReactJS, Redux, Styled Component, ExpressJS",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?"
+      "description": "A dynamic demonstration of my skills in ReactJS, Redux, Styled Components, and ExpressJS. This project is the result of my relentless pursuit of mastering cutting-edge technology and creating seamless, user-centric experiences."
     },
     {
       "id": 3,
-      "image": "",
+      "image": "https://imgtr.ee/images/2023/08/04/e03a8429ed30a81dcd8bdc0e4f73bb5d.png",
       "title": "Movie, Tv Series Directory",
       "link": "https://letswatch-entertainment.vercel.app/",
       "technology": "ReactJS, Public API",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed quia modi eligendi temporibus deserunt ab qui dolore dolores perferendis?"
+      "description": "This project is a testament to my skills in building dynamic web applications with React and seamlessly connecting to external APIs."
     }
   ]
 }

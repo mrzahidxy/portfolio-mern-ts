@@ -20,7 +20,7 @@ const FeatureCard: React.FC<Props> = ({ project }) => {
           <img
             src={project.image}
             alt=""
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
           />
         ) : (
           <div className="h-full font-semibold text-xl text-gray-400 flex justify-center items-center">
@@ -29,9 +29,9 @@ const FeatureCard: React.FC<Props> = ({ project }) => {
         )}
       </div>
       <div className="p-4">
-        <h2 className="text-xl font-bold mb-2">{project.title}</h2>
-        
-        <p className="text-gray-700 text-sm">{project.description}</p>
+        <h2 className="text-xl font-bold mb-2 text-blue-500">{project.title}</h2>
+        <h4 className="font-semibold mb-2 text-gray-700">{project.technology}</h4>
+        <p className="text-sm text-gray-500">{project.description}</p>
       </div>
     </a>
   );
