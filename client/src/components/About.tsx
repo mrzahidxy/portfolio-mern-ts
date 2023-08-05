@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "../assets/image/about.png";
 import {
   BarChart,
@@ -14,44 +15,61 @@ interface SkillData {
   color: string;
 }
 
-const data: SkillData[] = [
-  { name: "HTML CSS", skill: 0.8, color: "#3b82f6" },
-  { name: "Tailwind", skill: 0.8, color: "#22c55e" },
-  { name: "JS, TS", skill: 0.6, color: "#f97316" },
-  { name: "React", skill: 0.6, color: "#fde047" },
-  { name: "Next", skill: 0.6, color: "#FF6F61" },
-  { name: "Express", skill: 0.6, color: "#8b5cf6" },
-];
-
-const CustomYAxisTick = ({ x, y, payload }: any) => {
-  const skill = payload.value as number;
-
-  let label = "";
-  if (skill === 0.4) {
-    label = "Newbie";
-  } else if (skill === 0.6) {
-    label = "Geek";
-  } else if (skill === 0.8) {
-    label = "Ninja";
-  } else if (skill === 1) {
-    label = "Pro";
-  }
-
-  return (
-    <text x={x} y={y} dx={-4} textAnchor="end" fill="#1e90ff" fontSize={14}>
-      <tspan style={{ fontWeight: "bold" }}>{label}</tspan>
-    </text>
-  );
-};
-
 const About: React.FC = () => {
+  const data: SkillData[] = [
+    { name: "HTML CSS", skill: 0.8, color: "#3b82f6" },
+    { name: "Tailwind", skill: 0.8, color: "#22c55e" },
+    { name: "JS, TS", skill: 0.6, color: "#f97316" },
+    { name: "React", skill: 0.6, color: "#fde047" },
+    { name: "Next", skill: 0.6, color: "#FF6F61" },
+    { name: "Express", skill: 0.6, color: "#8b5cf6" },
+  ];
+
+  const skillLabelsAndColors = [
+    { skill: 0.4, label: "Newbie", color: "#1e90ff" },
+    { skill: 0.6, label: "Geek", color: "#1e90ff" },
+    { skill: 0.8, label: "Ninja", color: "#1e90ff" },
+    { skill: 1, label: "Pro", color: "#1e90ff" },
+  ];
+
+  // Custom Label
+  interface CustomYAxisTickProps {
+    x?: number;
+    y?: number;
+    payload?: any;
+  }
+  const CustomYAxisTick: React.FC<CustomYAxisTickProps> = ({
+    x,
+    y,
+    payload,
+  }) => {
+    const { value } = payload;
+    const labelObj = skillLabelsAndColors.find(
+      (labelObj) => labelObj.skill === value
+    );
+    const label = labelObj ? labelObj.label : "";
+
+    return (
+      <text
+        x={x}
+        y={y}
+        dx={-4}
+        textAnchor="end"
+        fill={labelObj?.color}
+        fontSize={14}
+      >
+        <tspan style={{ fontWeight: "bold" }}>{label}</tspan>
+      </text>
+    );
+  };
+
   return (
     <div
       id="about"
       data-scroll-section
       className="lg:h-screen grid lg:grid-cols-3 gap-20"
     >
-      <div className="h-[350px] lg:h-[400px] flex justify-center rounded-md bg-transparent lg:bg-gray-800 lg:relative">
+      <div className="h-[350px] flex justify-center rounded-md bg-transparent lg:bg-gray-800 lg:relative">
         <img
           src={Image}
           alt="image"
@@ -59,12 +77,11 @@ const About: React.FC = () => {
         />
       </div>
 
-      <div className="lg:col-span-2 space-y-12 lg:pl-48">
+      <div className="lg:col-span-2 space-y-12 lg:pl-32">
         <div className="space-y-8 text-justify">
           <h3 className="text-blue-500 text-3xl lg:text-5xl font-bold">
             About
           </h3>
-
           <p className="text-justify">
             As a devoted software magician, I've mastered JavaScript and its
             magical tech allies. With coding prowess, I conquer real-world

@@ -1,8 +1,17 @@
+import React from "react";
 import { projects } from "../JSON/project.json";
 import FeatureCard from "./common/FeatureCard";
 
-const Projects: React.FC = () => {
+interface Project{
+  id: number;
+  image: string;
+  title: string;
+  technology?: string;
+  link: string;
+  description: string;
+}
 
+const Projects: React.FC = () => {
   return (
     <div
       id="projects"
@@ -19,7 +28,7 @@ const Projects: React.FC = () => {
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {projects.map((project) => (
+        {projects.map((project: Project) => (
           <FeatureCard key={project.id} project={project} />
         ))}
       </div>
