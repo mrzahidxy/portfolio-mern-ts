@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSun,
-  faMoon,
-  faBars,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 interface NavbarLinkProps {
   to: string;
@@ -41,6 +36,36 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
   );
 };
 
+// DarkMode Toggler Component
+const DarkModeToggle: React.FC<{
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+}> = ({ isDarkMode, toggleDarkMode }) => {
+  const buttonClasses = `text-xl ${
+    isDarkMode ? "text-yellow-500" : "text-white"
+  }`;
+  const icon = isDarkMode ? faMoon : faSun;
+
+  return (
+    <div
+      className={`w-[58px] pb-[3px] lg:pt-[6px] pl-3 rounded-full border-2  dark:border-yellow-300 ${
+        isDarkMode ? "bg-gray-800" : "bg-blue-600"
+      } focus:outline-none`}
+    >
+      <button onClick={toggleDarkMode}>
+        <FontAwesomeIcon
+          icon={icon}
+          className={`${buttonClasses} ${isDarkMode ? "invisible" : ""}`}
+        />
+        <FontAwesomeIcon
+          icon={icon}
+          className={`${buttonClasses} ${isDarkMode ? "" : "invisible"}`}
+        />
+      </button>
+    </div>
+  );
+};
+
 // Scroll Function
 const updateActiveSection = (
   setActiveSection: React.Dispatch<React.SetStateAction<string | null>>
@@ -71,41 +96,10 @@ const updateActiveSection = (
   };
 };
 
-// DarkMode Toggler Component
-const DarkModeToggle: React.FC<{
-  isDarkMode: boolean;
-  toggleDarkMode: () => void;
-}> = ({ isDarkMode, toggleDarkMode }) => {
-  const buttonClasses = `text-xl ${
-    isDarkMode ? "text-white" : "text-yellow-500"
-  }`;
-  const icon = isDarkMode ? faSun : faMoon;
-
-  return (
-    <div
-      className={`w-[56px] p-1 pl-3 rounded-full ${
-        isDarkMode ? "bg-blue-600" : "bg-gray-800"
-      } focus:outline-none`}
-    >
-      <button onClick={toggleDarkMode}>
-        <FontAwesomeIcon
-          icon={icon}
-          className={`${buttonClasses} ${isDarkMode ? "" : "invisible"}`}
-        />
-        <FontAwesomeIcon
-          icon={icon}
-          className={`${buttonClasses} ${isDarkMode ? "invisible" : ""}`}
-        />
-      </button>
-    </div>
-  );
-};
-
 const Navbar: React.FC = () => {
   const [isSticky, setIsSticky] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const [toggleBar, setToggleBar] = useState<boolean>(false);
 
   // Dark Mode Toggler Function
   const toggleDarkMode = () => {
@@ -146,7 +140,6 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  console.log(isSticky);
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 ${
@@ -158,11 +151,11 @@ const Navbar: React.FC = () => {
           <h1 className="text-3xl font-bold">Zahid</h1>
         </div>
 
-        <div
-          className="block mr-6 text-2xl lg:hidden"
-          onClick={() => setToggleBar(true)}
-        >
-          <FontAwesomeIcon icon={faBars} />
+        <div className="block mr-6 text-2xl lg:hidden">
+          <DarkModeToggle
+            isDarkMode={isDarkMode}
+            toggleDarkMode={toggleDarkMode}
+          />
         </div>
 
         {/* Lg & above Screen */}
@@ -180,34 +173,6 @@ const Navbar: React.FC = () => {
             toggleDarkMode={toggleDarkMode}
           />
         </ul>
-
-        {/* Mobile & Tablet Screen */}
-        <div
-          className={`fixed top-0 right-0 h-full bg-gray-200 dark:bg-gray-800 p-4 ${
-            toggleBar ? "opacity-100 w-48" : "opacity-0 w-0"
-          } transition-opacity ease-in-out duration-300`}
-        >
-          <ul className="flex flex-col space-y-4">
-            <div className="bg-gray-300  flex justify-center items-center shadow-lg w-8 h-8 rounded-full">
-              <FontAwesomeIcon
-                icon={faTimes}
-                onClick={() => setToggleBar(false)}
-              />
-            </div>
-            {["intro", "about", "projects", "contact"].map((to) => (
-              <NavbarLink
-                key={to}
-                to={to}
-                label={to.charAt(0).toUpperCase() + to.slice(1)}
-                activeSection={activeSection}
-              />
-            ))}
-            <DarkModeToggle
-              isDarkMode={isDarkMode}
-              toggleDarkMode={toggleDarkMode}
-            />
-          </ul>
-        </div>
       </div>
     </nav>
   );

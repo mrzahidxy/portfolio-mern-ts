@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div id="contact" className="lg:h-screen grid lg:grid-cols-2 pt-60 gap-20">
+    <div id="contact" className="lg:h-screen grid lg:grid-cols-2 pt-60 gap-20 mb-12 lg:mb-0">
       {/* Left Section */}
       <div className="space-y-8">
         <h3 className="text-2xl lg:text-4xl font-bold text-blue-500">

@@ -17,9 +17,9 @@ interface SkillData {
 
 const About: React.FC = () => {
   const data: SkillData[] = [
-    { name: "HTML CSS", skill: 0.8, color: "#3b82f6" },
+    { name: "HTML & CSS", skill: 0.8, color: "#3b82f6" },
     { name: "Tailwind", skill: 0.8, color: "#22c55e" },
-    { name: "JS, TS", skill: 0.6, color: "#f97316" },
+    { name: "JS & TS", skill: 0.6, color: "#f97316" },
     { name: "React", skill: 0.6, color: "#fde047" },
     { name: "Next", skill: 0.6, color: "#FF6F61" },
     { name: "Express", skill: 0.6, color: "#8b5cf6" },
