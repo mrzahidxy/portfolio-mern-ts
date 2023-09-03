@@ -1,29 +1,16 @@
 const mongoose = require("mongoose");
 
 const portfolioSchema = new mongoose.Schema(
-    {
-        title: {
-            type: String,
-            required: true,
-        },
-        description: {
-            type: String,
-            required: true,
-        },
-        description: {
-            type: String,
-            required: true,
-        },
-        img: {
-            type: String,
-            required: true,
-        },
-        link: {
-            type: String,
-            default: false,
-        },
+  {
+    title: {
+      type: String,
+      required: true,
     },
-    { timestamps: true }
+    description: String,
+    img: String,
+    link: String,
+  },
+  { timestamps: true, collection: "portfolio" }
 );
 
 module.exports = mongoose.model("Portfolio", portfolioSchema);

@@ -1,10 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
-//router
-const authRouter = require("./routes/auth");
-const userRouter = require("./routes/users");
-
 const dotenv = require("dotenv");
 const cors = require("cors");
 
@@ -13,19 +8,20 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-//? DATABASE-CONNECTED
+const PORT = process.env.PORT || 8080;
+const MONGODB_URI = process.env.MONGODB_URI;
+
+//** DB CONNECTION */
 mongoose
-  .connect(
-    "mongodb+srv://mrzahidxy:mrzahidxy10@social-media-app.lvndutj.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect(MONGODB_URI)
   .then(() => console.log("Database Is Connetced!"))
   .catch((error) => console.log(error));
 
-//? ROUTES
-app.use("/api/auth", authRouter);
-app.use("/api/users", userRouter);
+//** ROUTE */
+const portfolioRouter = require("./routes/portfolio");
+app.use("/api/portfolio", portfolioRouter);
 
-//? APP RUNNING
-app.listen(8080, () => {
-  console.log("Backened Server Is Running!");
+//** APP */
+app.listen(PORT, () => {
+  console.log(`Backend Server Is Running on port ${PORT}`);
 });
