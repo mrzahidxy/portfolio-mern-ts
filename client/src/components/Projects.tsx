@@ -1,17 +1,38 @@
-import React from "react";
-import { projects } from "../JSON/project.json";
+import React, { useEffect, useState } from "react";
 import FeatureCard from "./common/FeatureCard";
+import axios from "axios";
 
-interface Project{
-  id: number;
-  image: string;
-  title: string;
-  technology?: string;
-  link: string;
+interface Project {
+  createdAt: string;
   description: string;
+  img: string;
+  link: string;
+  title: string;
+  updatedAt: string;
+  __v?: number;
+  _id: string;
 }
 
+
 const Projects: React.FC = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  const fetchProjects = async () => {
+    try {
+      const response = await axios.get<Project[]>(
+        "http://localhost:8080/api/portfolio/"
+      );
+      setProjects(response.data);
+      console.log("Fetched projects successfully:", response.data);
+    } catch (error) {
+      console.error("Error fetching projects:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
   return (
     <div
       id="projects"
@@ -29,7 +50,7 @@ const Projects: React.FC = () => {
 
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project: Project) => (
-          <FeatureCard key={project.id} project={project} />
+          <FeatureCard key={project._id} project={project} />
         ))}
       </div>
     </div>
