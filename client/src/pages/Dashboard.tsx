@@ -57,8 +57,8 @@ const ImageForm = () => {
       }
 
       // Send the form data using Axios
-      const response = await axios.post(
-        "http://localhost:8080/api/portfolio/",
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/portfolio/`,
         formData,
         {
           headers: {

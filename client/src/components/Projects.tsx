@@ -13,19 +13,20 @@ interface Project {
   _id: string;
 }
 
-
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState<Boolean>(true);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get<Project[]>(
-        "http://localhost:8080/api/portfolio/"
-      );
+      const response = await axios.get<Project[]>(`${apiUrl}/api/portfolio`);
       setProjects(response.data);
       console.log("Fetched projects successfully:", response.data);
     } catch (error) {
       console.error("Error fetching projects:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -49,9 +50,13 @@ const Projects: React.FC = () => {
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {projects.map((project: Project) => (
-          <FeatureCard key={project._id} project={project} />
-        ))}
+        {loading ? (
+          <div className="col-span-3 flex justify-center items-center font-bold text-gray-800 text-2xl">Loading... </div>
+        ) : (
+          projects.map((project: Project) => (
+            <FeatureCard key={project._id} project={project} />
+          ))
+        )}
       </div>
     </div>
   );
