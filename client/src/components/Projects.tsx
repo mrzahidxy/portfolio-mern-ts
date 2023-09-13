@@ -16,13 +16,12 @@ interface Project {
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState<Boolean>(true);
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiUrl = import.meta.env.VITE_VERCEL_API_URL;
 
   const fetchProjects = async () => {
     try {
       const response = await axios.get<Project[]>(`${apiUrl}/api/portfolio`);
       setProjects(response.data);
-      console.log("Fetched projects successfully:", response.data);
     } catch (error) {
       console.error("Error fetching projects:", error);
     } finally {
