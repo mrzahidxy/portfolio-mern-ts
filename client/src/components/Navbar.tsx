@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
 
         {/* Lg & above Screen */}
         <ul className="lg:flex items-center space-x-4 hidden">
-          {["intro", "about", "projects", "contact"].map((to) => (
+          {["intro", "about",  'skills', "projects", "contact"].map((to) => (
             <NavbarLink
               key={to}
               to={to}

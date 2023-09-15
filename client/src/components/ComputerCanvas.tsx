@@ -39,7 +39,7 @@ function RotatingMesh(props: RotatingMeshProps): JSX.Element {
   return (
     <mesh ref={meshRef} {...props}>
       {/* create a box geometry of a size of 2 on all axes */}
-      <boxGeometry args={[2, 2, 2]} />
+      <boxGeometry args={[1.8, 1.8, 1.8]} />
       {/* give the mesh the standard pbr material */}
       <meshStandardMaterial />
     </mesh>

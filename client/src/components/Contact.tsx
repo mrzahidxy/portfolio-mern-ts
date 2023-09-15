@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div id="contact" className="lg:h-screen grid lg:grid-cols-2 pt-60 gap-20 mb-12 lg:mb-0">
+    <div id="contact" className="lg:h-screen grid lg:grid-cols-2 pt-40 gap-20 mb-12 lg:mb-0">
       {/* Left Section */}
       <div className="space-y-8">
         <h3 className="text-2xl lg:text-4xl font-bold text-blue-500">
@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
         <div className="flex items-center gap-4">
           <h4 className="text-xl font-medium">Find me on:</h4>
           <SocialLink
-            href="https://www.facebook.com/mrzahidxy"
+            href="https://www.facebook.com/mrzahidxy2"
             icon={facebookIcon}
             alt="facebook-link"
           />
@@ -120,9 +120,9 @@ const Contact: React.FC = () => {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="px-8 lg:px-12 py-2 rounded-md bg-blue-500 hover:bg-blue-800 transition-colors duration-300 text-white text-lg"
+                className="w-full py-2 rounded-md bg-blue-500 hover:bg-blue-800 transition-colors duration-300 text-white text-lg"
               >
-                Submit
+                Send
               </button>
             </div>
 
