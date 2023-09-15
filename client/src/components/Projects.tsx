@@ -37,13 +37,13 @@ const Projects: React.FC = () => {
     <div
       id="projects"
       data-scroll-section
-      className="lg:h-screen flex flex-col space-y-20 pt-40"
+      className="lg:h-screen flex flex-col pt-20 space-y-20"
     >
       <div className="flex flex-col items-center space-y-6">
         <h3 className="text-blue-500 text-3xl lg:text-5xl font-bold">
           Imagine and Create.
         </h3>
-        <p>
+        <p className="lg:text-xl">
           Here are some of my works. For live view, Click on the below sections.
         </p>
       </div>
