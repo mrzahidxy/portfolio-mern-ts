@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
         <h3 className="text-blue-500 text-3xl lg:text-5xl font-bold">
           Imagine and Create.
         </h3>
-        <p>
+        <p className="lg:text-xl">
           Here are some of my works. For live view, Click on the below sections.
         </p>
       </div>

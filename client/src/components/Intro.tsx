@@ -8,7 +8,7 @@ function Intro() {
       data-scroll-section
       className="h-screen grid lg:grid-cols-2"
     >
-      <div className="col-span-1 flex flex-col justify-center gap-5 lg:pr-36">
+      <div className="col-span-1 flex flex-col justify-center gap-5 lg:pr-32">
         <span className="text-xl md:text-3xl">Hello, This is</span>
         <h1 className="text-4xl md:text-6xl font-bold">Zahid Hasan</h1>
         <div className="h-12 overflow-hidden">
@@ -19,7 +19,7 @@ function Intro() {
             <div className="h-12">Videographer</div>
           </div>
         </div>
-        <p className="text-base md:text-lg text-justify">
+        <p className="text-base md:text-xl text-justify">
           As a coding wizard 🧔, I've mastered JavaScript and its tech
           companions 💻. With code as my wand, I craft solutions that dazzle
           with innovation ✨.

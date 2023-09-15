@@ -94,11 +94,11 @@ const Skill: React.FC = () => {
     <div id="skills" data-scroll-section className="lg:h-screen flex flex-col pt-20 space-y-10">
       <div className="flex flex-col items-center space-y-6 mb-10">
         <h3 className="text-blue-500 text-3xl lg:text-5xl font-bold">
-        Mastered Techn & Stack.
+        Mastered  & Stack.
         </h3>
-        <p>These are the technologies I've mastered.</p>
+        <p className="lg:text-lg">These are the technologies I've mastered.</p>
       </div>
-      <div className="grid lg:grid-cols-4 gap-x-32">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-32">
         <SkillCard title="Language" skills={languageSKills} />
         <SkillCard title="Frontend" skills={frontendSkills} />
         <SkillCard title="Backend" skills={backendSkills} />
