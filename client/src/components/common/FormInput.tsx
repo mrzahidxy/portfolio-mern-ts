@@ -21,7 +21,7 @@ const FormInput: React.FC<FormInputProps> = ({
       id={id}
       name={name}
       placeholder={placeholder}
-      className="appearance-none leading-tight w-full text-gray-700 text-lg py-2 pl-2 border-b border-gray-500 focus:border-blue-500 focus:outline-none"
+      className="appearance-none bg-inherit leading-tight w-full text-gray-700 text-lg py-2 pl-2 border-b border-gray-500 focus:border-blue-500 focus:outline-none"
       as={as}
     />
 

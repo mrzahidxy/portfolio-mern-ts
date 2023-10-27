@@ -1,40 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
-
-interface NavbarLinkProps {
-  to: string;
-  label: string;
-  activeSection: string | null;
-}
-
-// Navbar Component
-const NavbarLink: React.FC<NavbarLinkProps> = ({
-  to,
-  label,
-  activeSection,
-}) => {
-  const isActive = activeSection === to;
-  const activeClassName = isActive ? "text-blue-500" : "";
-
-  return (
-    <li>
-      <Link
-        activeClass="active"
-        to={to}
-        smooth={true}
-        spy={true}
-        offset={-70}
-        duration={500}
-        isDynamic={true}
-        className={`cursor-pointer text-lg ${activeClassName}`}
-      >
-        {label}
-      </Link>
-    </li>
-  );
-};
+import NavbarLink from "./common/NavbarLink";
 
 // DarkMode Toggler Component
 const DarkModeToggle: React.FC<{
@@ -81,6 +48,8 @@ const updateActiveSection = (
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
 
+      console.log(sectionId, scrollPosition, sectionTop, sectionHeight);
+
       if (
         scrollPosition >= sectionTop - 70 &&
         scrollPosition < sectionTop + sectionHeight - 70
@@ -108,6 +77,8 @@ const Navbar: React.FC = () => {
     document.documentElement.classList.toggle("dark", updatedDarkMode);
     localStorage.setItem("darkMode", JSON.stringify(updatedDarkMode));
   };
+
+  console.log(activeSection);
 
   // Scrolling Function
   useEffect(() => {
@@ -146,21 +117,13 @@ const Navbar: React.FC = () => {
         isSticky ? "shadow-lg" : ""
       }`}
     >
-      <div className="container mx-auto px-4 py-3 font-semibold flex justify-between items-center relative">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center relative">
         <div>
           <h1 className="text-3xl font-bold">Zahid</h1>
         </div>
 
-        <div className="block mr-6 text-2xl lg:hidden">
-          <DarkModeToggle
-            isDarkMode={isDarkMode}
-            toggleDarkMode={toggleDarkMode}
-          />
-        </div>
-
-        {/* Lg & above Screen */}
-        <ul className="lg:flex items-center space-x-4 hidden">
-          {["intro", "about",  'skills', "projects", "contact"].map((to) => (
+        <ul className="hidden lg:flex items-center space-x-10">
+          {["intro", "about", "skills", "projects", "contact"].map((to) => (
             <NavbarLink
               key={to}
               to={to}
