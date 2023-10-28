@@ -48,7 +48,6 @@ const updateActiveSection = (
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
 
-      console.log(sectionId, scrollPosition, sectionTop, sectionHeight);
 
       if (
         scrollPosition >= sectionTop - 70 &&
@@ -78,7 +77,6 @@ const Navbar: React.FC = () => {
     localStorage.setItem("darkMode", JSON.stringify(updatedDarkMode));
   };
 
-  console.log(activeSection);
 
   // Scrolling Function
   useEffect(() => {

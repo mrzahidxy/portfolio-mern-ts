@@ -3,14 +3,13 @@ import { Link } from "react-scroll";
 interface NavbarLinkProps {
   to: string;
   label: string;
-  activeSection: string | null;
+  activeSection?: string | null;
 }
 
 // Navbar Component
 const NavbarLink: React.FC<NavbarLinkProps> = ({
   to,
   label,
-  activeSection,
 }) => {
 
 

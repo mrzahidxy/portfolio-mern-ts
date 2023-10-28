@@ -13,16 +13,16 @@ function Intro() {
         <h1 className="text-4xl md:text-6xl font-bold">Zahid Hasan</h1>
         <div className="h-12 overflow-hidden">
           <div className="flex flex-col animate-move text-xl md:text-4xl font-bold text-blue-500">
-            <div className="h-12">Software Engineer</div>
-            <div className="h-12">MERN Stack Developer</div>
-            <div className="h-12">Tech Blogger</div>
+            <div className="h-12">Software Developer</div>
+            <div className="h-12">MERN Developer</div>
+            <div className="h-12"> Blogger</div>
             <div className="h-12">Videographer</div>
           </div>
         </div>
         <p className="text-base md:text-xl text-justify">
-          "I'm a dedicated developer 🧔, and I'm all about JavaScript and its
-          handy libraries and frameworks 💻. I use code to tackle real-life
-          problems and add that extra sparkle ✨.
+          I'm a dedicated Software developer 🧔, and I'm all about JavaScript
+          and its handy libraries and frameworks 💻. I use code to tackle
+          real-life problems and add that extra sparkle ✨.
         </p>
         {/* 
         <button className="border p-2 max-w-xs rounded-xl hover:bg-blue-50 transition ease-in-out duration-200">

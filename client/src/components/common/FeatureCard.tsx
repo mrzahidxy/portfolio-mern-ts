@@ -8,7 +8,9 @@ type Props = {
     createdAt: string;
     description: string;
     img: string;
-    link: string;
+    technology: Array<string>;
+    githubLink: string;
+    liveLink: string;
     title: string;
     updatedAt: string;
     __v?: number;
@@ -16,12 +18,14 @@ type Props = {
   };
 };
 
+
+
+
+
 const FeatureCard: React.FC<Props> = ({ project }) => {
+ 
   return (
-    <Link
-      to={`${project.link}`}
-      className="block bg-gray-100 rounded-md shadow-md group hover:shadow-xl hover:bg-blue-100 transform hover:scale-102 cursor-pointer relative transition duration-300 ease-in-out"
-    >
+    <div className="block bg-gray-100 rounded-md shadow-md group hover:shadow-xl hover:bg-blue-100 transform hover:scale-102 cursor-pointer relative transition duration-300 ease-in-out">
       <div className="h-40 rounded-t-md overflow-hidden">
         {project.img ? (
           <img
@@ -39,16 +43,28 @@ const FeatureCard: React.FC<Props> = ({ project }) => {
         <div className="flex justify-between">
           <h2 className="text-xl font-bold text-blue-500">{project.title}</h2>
           <div className="space-x-2 text-lg">
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-            <FontAwesomeIcon icon={faGithub} />
+            <Link to={project.liveLink}>
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </Link>
+
+            <Link to={project.githubLink}>
+              <FontAwesomeIcon icon={faGithub} />
+            </Link>
           </div>
         </div>
         <ul className="flex gap-3">
-          <li className="bg-white text-blue-500 font-semibold px-4 py-1 rounded-xl">Test</li>
+
+   
+  
+          {/* {project?.technology && project?.technology[0]?.map((tech:string) => (
+            <li className="bg-white text-blue-500 font-semibold px-4 py-1 rounded-xl">
+              {tech}
+            </li>
+          ))} */}
         </ul>
         <p className="text-sm text-gray-500">{project.description}</p>
       </div>
-    </Link>
+    </div>
   );
 };
 
