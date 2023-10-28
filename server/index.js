@@ -21,6 +21,9 @@ mongoose
 const portfolioRouter = require("./routes/portfolio");
 app.use("/api/portfolio", portfolioRouter);
 
+const userRouter = require("./routes/user");
+app.use("/api/auth", userRouter);
+
 //** APP */
 app.listen(PORT, () => {
   console.log(`Backend Server Is Running on port ${PORT}`);
