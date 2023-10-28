@@ -15,9 +15,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        poppins: "'Poppins', sans-serif",
-        roboto: "'Roboto', sans-serif",
-        nunito: "'Nunito', sans-serif",
+        montserrat: ["Montserrat", "sans"],
       },
       colors: {
         primary: "#FD3d57",

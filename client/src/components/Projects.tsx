@@ -3,14 +3,13 @@ import FeatureCard from "./common/FeatureCard";
 import axios from "axios";
 
 interface Project {
-  createdAt: string;
   description: string;
   img: string;
-  link: string;
+  technology: Array<string>;
+  githubLink: string;
+  liveLink: string;
   title: string;
-  updatedAt: string;
-  __v?: number;
-  _id: string;
+  _id?: string;
 }
 
 const Projects: React.FC = () => {
@@ -37,25 +36,31 @@ const Projects: React.FC = () => {
     <div
       id="projects"
       data-scroll-section
-      className="lg:h-screen flex flex-col pt-20 space-y-20"
+      className="flex-col space-y-10 py-10 lg:py-20"
     >
-      <div className="flex flex-col items-center space-y-6">
-        <h3 className="text-blue-500 text-3xl lg:text-5xl font-bold">
-          Imagine and Create.
+      <div className="flex flex-col space-y-2">
+        <h3 className="text-blue-500 text-2xl lg:text-4xl font-bold">
+          &lt;imagine and create&gt;
         </h3>
-        <p className="lg:text-xl">
-          Here are some of my works. For live view, Click on the below sections.
-        </p>
+        <p className="lg:text-xl">Here are some of my works.</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
         {loading ? (
-          <div className="col-span-3 flex justify-center items-center font-bold text-gray-800 text-2xl">Loading... </div>
+          <div className="col-span-3 flex justify-center items-center font-bold text-gray-800 text-2xl">
+            Loading...{" "}
+          </div>
         ) : (
           projects.map((project: Project) => (
             <FeatureCard key={project._id} project={project} />
           ))
         )}
+      </div>
+
+      <div className="float-right">
+        <h3 className="text-blue-500 text-2xl font-bold">
+          &lt;imagine and create&gt;
+        </h3>
       </div>
     </div>
   );

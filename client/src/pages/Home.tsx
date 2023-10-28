@@ -10,14 +10,16 @@ interface HomeProps {}
 
 const Home: React.FC<HomeProps> = () => {
   return (
-    <div className="container">
+    <>
       <Navbar />
-      <Intro />
-      <About />
-      <Skill/>
-      <Projects />
+      <div className="container">
+        <Intro />
+        <About />
+        <Skill />
+        <Projects />
+      </div>
       <Contact />
-    </div>
+    </>
   );
 };
 

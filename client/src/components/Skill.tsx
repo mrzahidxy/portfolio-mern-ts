@@ -91,18 +91,36 @@ const otherSKills: SkillSet[] = [
 
 const Skill: React.FC = () => {
   return (
-    <div id="skills" data-scroll-section className="lg:h-screen flex flex-col pt-20 space-y-10">
-      <div className="flex flex-col items-center space-y-6 mb-10">
-        <h3 className="text-blue-500 text-3xl lg:text-5xl font-bold">
-        Mastered  & Stack.
-        </h3>
-        <p className="lg:text-lg">These are the technologies I've mastered.</p>
-      </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-32">
+    <div
+      id="skills"
+      data-scroll-section
+      className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:py-20 py-10"
+    >
+      <div className="grid grid-cols-2 gap-y-10">
         <SkillCard title="Language" skills={languageSKills} />
         <SkillCard title="Frontend" skills={frontendSkills} />
         <SkillCard title="Backend" skills={backendSkills} />
         <SkillCard title="Others" skills={otherSKills} />
+      </div>
+
+      <div className="space-y-6">
+        <h3 className="text-blue-500 text-2xl lg:text-4xl font-bold">
+          &lt;mastered & stack&gt;
+        </h3>
+
+        <p className="lg:text-lg text-justify">
+          As a dedicated software professional, I have mastered JavaScript and
+          related technologies. I use my coding skills to solve real-world
+          problems creatively and efficiently. I'm proficient in both frontend
+          and backend development, which strengthens my skills in software
+          engineering.
+        </p>
+
+        <div className="float-right">
+          <h3 className="text-blue-500 text-2xl font-bold">
+            &lt;mastered & stack/&gt;
+          </h3>
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,8 @@ const portfolioSchema = new mongoose.Schema(
     },
     description: String,
     img: String,
-    link: String,
+    liveLink: String,
+    githubLink: String,
   },
   { timestamps: true, collection: "portfolio" }
 );
