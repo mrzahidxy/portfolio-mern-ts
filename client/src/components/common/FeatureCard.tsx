@@ -5,25 +5,17 @@ import { Link } from "react-router-dom";
 
 type Props = {
   project: {
-    createdAt: string;
     description: string;
     img: string;
     technology: Array<string>;
     githubLink: string;
     liveLink: string;
     title: string;
-    updatedAt: string;
-    __v?: number;
-    _id: string;
+    _id?: string;
   };
 };
 
-
-
-
-
 const FeatureCard: React.FC<Props> = ({ project }) => {
- 
   return (
     <div className="block bg-gray-100 rounded-md shadow-md group hover:shadow-xl hover:bg-blue-100 transform hover:scale-102 cursor-pointer relative transition duration-300 ease-in-out">
       <div className="h-40 rounded-t-md overflow-hidden">
@@ -53,9 +45,6 @@ const FeatureCard: React.FC<Props> = ({ project }) => {
           </div>
         </div>
         <ul className="flex gap-3">
-
-   
-  
           {/* {project?.technology && project?.technology[0]?.map((tech:string) => (
             <li className="bg-white text-blue-500 font-semibold px-4 py-1 rounded-xl">
               {tech}

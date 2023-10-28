@@ -3,14 +3,13 @@ import FeatureCard from "./common/FeatureCard";
 import axios from "axios";
 
 interface Project {
-  createdAt: string;
   description: string;
   img: string;
-  link: string;
+  technology: Array<string>;
+  githubLink: string;
+  liveLink: string;
   title: string;
-  updatedAt: string;
-  __v?: number;
-  _id: string;
+  _id?: string;
 }
 
 const Projects: React.FC = () => {
