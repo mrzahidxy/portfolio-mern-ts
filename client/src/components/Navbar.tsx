@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import NavbarLink from "./common/NavbarLink";
@@ -34,39 +34,39 @@ const DarkModeToggle: React.FC<{
 };
 
 // Scroll Function
-const updateActiveSection = (
-  setActiveSection: React.Dispatch<React.SetStateAction<string | null>>
-) => {
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-    const sections = document.querySelectorAll<HTMLElement>(
-      "[data-scroll-section]"
-    );
+// const updateActiveSection = (
+//   setActiveSection: React.Dispatch<React.SetStateAction<string | null>>
+// ) => {
+//   const handleScroll = () => {
+//     const scrollPosition = window.scrollY;
+//     const sections = document.querySelectorAll<HTMLElement>(
+//       "[data-scroll-section]"
+//     );
 
-    sections.forEach((section) => {
-      const sectionId = section.getAttribute("id");
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
+//     sections.forEach((section) => {
+//       const sectionId = section.getAttribute("id");
+//       const sectionTop = section.offsetTop;
+//       const sectionHeight = section.offsetHeight;
 
 
-      if (
-        scrollPosition >= sectionTop - 70 &&
-        scrollPosition < sectionTop + sectionHeight - 70
-      ) {
-        setActiveSection(sectionId);
-      }
-    });
-  };
+//       if (
+//         scrollPosition >= sectionTop - 70 &&
+//         scrollPosition < sectionTop + sectionHeight - 70
+//       ) {
+//         setActiveSection(sectionId);
+//       }
+//     });
+//   };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-};
+//   window.addEventListener("scroll", handleScroll);
+//   return () => {
+//     window.removeEventListener("scroll", handleScroll);
+//   };
+// };
 
 const Navbar: React.FC = () => {
-  const [isSticky, setIsSticky] = useState<boolean>(false);
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  // const [isSticky, setIsSticky] = useState<boolean>(false);
+  const isSticky = false
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   // Dark Mode Toggler Function
@@ -77,37 +77,6 @@ const Navbar: React.FC = () => {
     localStorage.setItem("darkMode", JSON.stringify(updatedDarkMode));
   };
 
-
-  // Scrolling Function
-  useEffect(() => {
-    updateActiveSection(setActiveSection);
-    const savedDarkMode = localStorage.getItem("darkMode");
-    if (savedDarkMode) {
-      setIsDarkMode(JSON.parse(savedDarkMode));
-      document.documentElement.classList.toggle(
-        "dark",
-        JSON.parse(savedDarkMode)
-      );
-    }
-
-    // Set Navbar Sticky
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 0) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-
-    // Attach the scroll event listener when the component mounts
-    window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <nav
@@ -121,12 +90,11 @@ const Navbar: React.FC = () => {
         </div>
 
         <ul className="hidden lg:flex items-center space-x-10">
-          {["intro", "about", "skills", "projects", "contact"].map((to) => (
+          {["intro", "about", "skills", "projects", "contact"].map((to, i) => (
             <NavbarLink
-              key={to}
+              key={i}
               to={to}
               label={to.charAt(0).toUpperCase() + to.slice(1)}
-              activeSection={activeSection}
             />
           ))}
           <DarkModeToggle

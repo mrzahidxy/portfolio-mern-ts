@@ -69,8 +69,8 @@ const About: React.FC = () => {
             </h3>
 
             <div className="space-y-4">
-              {experiences.map((experience) => (
-                <div className="flex items-center gap-8">
+              {experiences.map((experience, index) => (
+                <div key={index} className="flex items-center gap-8">
                   <img
                     src={experience.image}
                     alt=""
