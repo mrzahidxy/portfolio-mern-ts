@@ -1,5 +1,6 @@
 {
   "name": "zahid-protfolio",
+  "homepage": "http://mrzahid.xyz/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,6 +15,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "github:fortawesome/react-fontawesome",
+    "@react-three/drei": "^9.92.5",
     "@react-three/fiber": "^8.13.5",
     "@types/three": "^0.154.0",
     "axios": "^1.5.0",
@@ -22,7 +24,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
-    "react-scroll": "^1.8.9",
     "recharts": "^2.7.2",
     "three": "^0.154.0",
     "three-gltf-loader": "^1.111.0",

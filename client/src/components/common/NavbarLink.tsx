@@ -1,4 +1,4 @@
-import { Link } from "react-scroll";
+import { useLocation } from "react-router-dom";
 
 interface NavbarLinkProps {
   to: string;
@@ -7,30 +7,19 @@ interface NavbarLinkProps {
 }
 
 // Navbar Component
-const NavbarLink: React.FC<NavbarLinkProps> = ({
-  to,
-  label,
-}) => {
-
-
-  // const isActive = activeSection === to;
-  // const activeClassName = isActive ? "text-blue-500" : "";
+const NavbarLink: React.FC<NavbarLinkProps> = ({ to, label }) => {
+  const { hash } = useLocation();
 
   return (
     <li>
-      <Link
-        activeClass="active"
-        to={to}
-        smooth={true}
-        spy={true}
-        offset={-70}
-        duration={500}
-        isDynamic={true}
-        className="cursor-pointer font-semibold font-xl"
-        // className={`cursor-pointer text-xl ${activeClassName}`}
+      <a
+        className={`cursor-pointer font-semibold font-xl ${
+          hash === "#" + to ? "text-blue-500" : ""
+        }`}
+        href={"#"+to}
       >
         {label}
-      </Link>
+      </a>
     </li>
   );
 };
