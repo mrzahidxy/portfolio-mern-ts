@@ -9,7 +9,7 @@ const Model = ({ rotation }: RotatingMeshProps): JSX.Element => {
   // Load the 3D model using GLTFLoader
   const { scene } = useLoader(
     GLTFLoader,
-    "../../public/radio_shack_trs-80_model_1/scene.gltf"
+    "../../public/computer/scene.gltf"
   );
 
   // Adjust rotation to fix upside-down rendering
