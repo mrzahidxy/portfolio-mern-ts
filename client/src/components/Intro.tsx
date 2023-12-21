@@ -32,7 +32,7 @@ function Intro() {
 
       <div className="col-span-1 relative hidden lg:block">
       
-        <ComputerCanvas />
+        {/* <ComputerCanvas /> */}
       </div>
     </div>
   );
