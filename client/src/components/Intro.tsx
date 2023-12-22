@@ -1,5 +1,6 @@
+import { Suspense, lazy } from "react";
 import "../App.css";
-import ComputerCanvas from "./ComputerCanvas";
+const ComputerCanvas = lazy(() => import("./ComputerCanvas"));
 
 function Intro() {
   return (
@@ -30,10 +31,9 @@ function Intro() {
         </button> */}
       </div>
 
-      <div className="col-span-1 relative hidden lg:block">
-      
-        <ComputerCanvas />
-      </div>
+      <Suspense fallback={<div>Loading 3D model...</div>}>
+          <ComputerCanvas />
+        </Suspense>
     </div>
   );
 }
