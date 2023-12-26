@@ -4,7 +4,7 @@ import { Euler } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "@react-three/drei";
 
-const MODEL_PATH = "/radio_shack_trs-80_model_1/scene.gltf";
+const MODEL_PATH = "/computer/scene.gltf";
 const initialRotation = new Euler(6.3, 16, 15.65);
 
 const Model = ({ rotation }: RotatingMeshProps): JSX.Element => {

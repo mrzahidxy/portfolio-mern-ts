@@ -48,7 +48,6 @@ const DarkModeToggle: React.FC<{
 //       const sectionTop = section.offsetTop;
 //       const sectionHeight = section.offsetHeight;
 
-
 //       if (
 //         scrollPosition >= sectionTop - 70 &&
 //         scrollPosition < sectionTop + sectionHeight - 70
@@ -66,7 +65,7 @@ const DarkModeToggle: React.FC<{
 
 const Navbar: React.FC = () => {
   // const [isSticky, setIsSticky] = useState<boolean>(false);
-  const isSticky = false
+  const isSticky = false;
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   // Dark Mode Toggler Function
@@ -76,7 +75,6 @@ const Navbar: React.FC = () => {
     document.documentElement.classList.toggle("dark", updatedDarkMode);
     localStorage.setItem("darkMode", JSON.stringify(updatedDarkMode));
   };
-
 
   return (
     <nav
@@ -90,18 +88,22 @@ const Navbar: React.FC = () => {
         </div>
 
         <ul className="hidden lg:flex items-center space-x-10">
-          {["intro", "about", "skills", "projects", "contact"].map((to, i) => (
-            <NavbarLink
-              key={i}
-              to={to}
-              label={to.charAt(0).toUpperCase() + to.slice(1)}
-            />
+          {[
+            { name: "Intro", url: "/" },
+            { name: "about", url: "/about" },
+            { name: "skills", url: "/skills" },
+            { name: "projects", url: "/projects" },
+            { name: "contact", url: "contact" },
+          ].map((item, i) => (
+            <NavbarLink key={i} to={item.url} label={item.name} />
           ))}
-          <DarkModeToggle
+    
+        </ul>
+
+        <DarkModeToggle
             isDarkMode={isDarkMode}
             toggleDarkMode={toggleDarkMode}
           />
-        </ul>
       </div>
     </nav>
   );

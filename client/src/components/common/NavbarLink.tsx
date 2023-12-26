@@ -16,7 +16,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({ to, label }) => {
         className={`cursor-pointer font-semibold font-xl ${
           hash === "#" + to ? "text-blue-500" : ""
         }`}
-        href={"#"+to}
+        href={to}
       >
         {label}
       </a>

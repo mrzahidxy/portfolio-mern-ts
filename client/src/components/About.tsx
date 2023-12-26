@@ -29,7 +29,7 @@ const About: React.FC = () => {
     <div
       id="about"
       data-scroll-section
-      className="grid lg:grid-cols-3 gap-20 lg:py-20"
+      className="container grid lg:grid-cols-3 gap-20 lg:py-20"
     >
       <div className="h-[350px] rounded-md bg-transparent lg:bg-gray-800 lg:relative">
         <img

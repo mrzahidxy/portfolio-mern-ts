@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <footer className="bg-blue-100 mt-20">
+    <footer className="bg-blue-50 mt-20">
       <div id="contact" className="container grid lg:grid-cols-3 gap-6 py-10">
         {/* Left Section */}
         <div className="space-y-8 lg:col-span-2">
@@ -78,12 +78,12 @@ const Contact: React.FC = () => {
           <div className="flex items-center gap-4">
             <h4 className="text-xl font-bold">Find me on:</h4>
             <SocialLink
-              href="https://www.facebook.com/mrzahidxy2"
+              href="https://www.facebook.com/mrzahidxy"
               icon={facebookIcon}
               alt="facebook-link"
             />
             <SocialLink
-              href="https://www.linkedin.com/in/mrzahidxy/"
+              href="https://www.linkedin.com/in/mrzahidxy"
               icon={linkedinIcon}
               alt="linkedin-link"
             />
@@ -119,10 +119,10 @@ const Contact: React.FC = () => {
                 />
               ))}
 
-              <div className="flex justify-center">
+              <div className="w-full">
                 <button
                   type="submit"
-                  className="py-2 px-10 rounded-md bg-blue-500 hover:bg-blue-700 transition ease-in-out duration-300 text-white text-lg font-semibold"
+                  className="w-full py-2 rounded-md bg-blue-500 hover:bg-blue-700 transition ease-in-out duration-300 text-white text-lg font-semibold"
                 >
                   Send
                 </button>
@@ -138,13 +138,13 @@ const Contact: React.FC = () => {
         </div>
       </div>
       <div className="bg-black text-white">
-        <div className="container flex justify-between py-1 text-xs lg:text-lg">
+        <div className="container flex justify-between py-1 text-xs lg:text-sm">
           <p>
             Developed by{" "}
             <Link to="https://github.com/mrzahidxy">Md Zahid Hasan</Link>{" "}
           </p>
           <p>
-            Stack: ReactJS, TailwindCSS, ThreeJS, NodeJs, MongoDB Atlas,  & EmailJS
+            Stack: MERN
           </p>
         </div>
       </div>

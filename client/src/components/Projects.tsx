@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
     <div
       id="projects"
       data-scroll-section
-      className="flex-col space-y-10 py-10 lg:py-20"
+      className="container flex-col space-y-10 py-10 lg:py-20"
     >
       <div className="flex flex-col space-y-2">
         <h3 className="text-blue-500 text-2xl lg:text-4xl font-bold">
