@@ -12,7 +12,7 @@ import addressIcon from "../assets/icon/address.png";
 import facebookIcon from "../assets/icon/facebook.png";
 import linkedinIcon from "../assets/icon/linkedin.png";
 import githubIcon from "../assets/icon/github.png";
-import { Link } from "react-router-dom";
+
 
 interface FormValues {
   name: string;
