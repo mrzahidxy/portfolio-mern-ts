@@ -8,13 +8,12 @@ interface NavbarLinkProps {
 
 // Navbar Component
 const NavbarLink: React.FC<NavbarLinkProps> = ({ to, label }) => {
-  const { hash } = useLocation();
-
+  const { pathname } = useLocation();
   return (
     <li>
       <a
-        className={`cursor-pointer font-semibold font-xl ${
-          hash === "#" + to ? "text-blue-500" : ""
+        className={`cursor-pointer font-bold font-2xl ${
+          pathname === to ? "text-blue-500" : ""
         }`}
         href={to}
       >

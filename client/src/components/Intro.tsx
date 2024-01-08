@@ -33,6 +33,9 @@ function Intro() {
 
       <div className="col-span-1 flex flex-col justify-center">
         <img src="/hero-image.png" />
+        <a href="https://storyset.com/work" className="text-xs">
+            Work illustrations by Storyset
+          </a>
       </div>
       {/* 
       <Suspense fallback={<div>Loading 3D model...</div>}>

@@ -36,31 +36,33 @@ const Projects: React.FC = () => {
     <div
       id="projects"
       data-scroll-section
-      className="container flex-col space-y-10 py-10 lg:py-20"
+      className="container h-screen flex items-center"
     >
-      <div className="flex flex-col space-y-2">
-        <h3 className="text-blue-500 text-2xl lg:text-4xl font-bold">
-          &lt;imagine and create&gt;
-        </h3>
-        <p className="lg:text-xl">Here are some of my works.</p>
-      </div>
+      <div className="flex flex-col gap-10">
+        <div className="flex flex-col space-y-2">
+          <h3 className="text-blue-500 text-2xl lg:text-4xl font-bold">
+            &lt;imagine and create&gt;
+          </h3>
+          <p className="lg:text-xl">Here are some of my works.</p>
+        </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {loading ? (
-          <div className="col-span-3 flex justify-center items-center font-bold text-gray-800 text-2xl">
-            Loading...{" "}
-          </div>
-        ) : (
-          projects.map((project: Project) => (
-            <FeatureCard key={project._id} project={project} />
-          ))
-        )}
-      </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {loading ? (
+            <div className="col-span-3 flex justify-center items-center font-bold text-gray-800 text-2xl">
+              Loading...{" "}
+            </div>
+          ) : (
+            projects.map((project: Project) => (
+              <FeatureCard key={project._id} project={project} />
+            ))
+          )}
+        </div>
 
-      <div className="float-right">
-        <h3 className="text-blue-500 text-2xl font-bold">
-          &lt;imagine and create&gt;
-        </h3>
+        <div className="self-end">
+          <h3 className="text-blue-500 text-2xl font-bold">
+            &lt;imagine and create&gt;
+          </h3>
+        </div>
       </div>
     </div>
   );

@@ -94,9 +94,9 @@ const Skill: React.FC = () => {
     <div
       id="skills"
       data-scroll-section
-      className="container flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:py-20 py-10"
+      className="container h-screen flex flex-col-reverse lg:grid lg:grid-cols-2 items-center"
     >
-      <div className="grid grid-cols-2 gap-y-10">
+      <div className="grid gap-y-10">
         <SkillCard title="Language" skills={languageSKills} />
         <SkillCard title="Frontend" skills={frontendSkills} />
         <SkillCard title="Backend" skills={backendSkills} />

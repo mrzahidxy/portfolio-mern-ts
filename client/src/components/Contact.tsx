@@ -63,89 +63,85 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <footer className="bg-blue-50 mt-20">
-      <div id="contact" className="container grid lg:grid-cols-3 gap-6 py-10">
-        {/* Left Section */}
-        <div className="space-y-8 lg:col-span-2">
-          <h3 className="text-3xl lg:text-5xl font-bold text-blue-500 mb-10">
-            Let's discuss your project.
-          </h3>
-          <div className="flex flex-col text-lg font-medium space-y-4">
-            <ContactInfo icon={phoneIcon} text="+8801405232258" />
-            <ContactInfo icon={emailIcon} text="mrzahidxy@gmail.com" />
-            <ContactInfo icon={addressIcon} text="Dhaka, Bangladesh" />
-          </div>
-          <div className="flex items-center gap-4">
-            <h4 className="text-xl font-bold">Find me on:</h4>
-            <SocialLink
-              href="https://www.facebook.com/mrzahidxy"
-              icon={facebookIcon}
-              alt="facebook-link"
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/mrzahidxy"
-              icon={linkedinIcon}
-              alt="linkedin-link"
-            />
-            <SocialLink
-              href="https://github.com/mrzahidxy"
-              icon={githubIcon}
-              alt="github-link"
-            />
-          </div>
+    <footer className="h-screen flex flex-col justify-center">
+      <div id="contact" className="container grid lg:grid-cols-2 gap-x-32">
+        <div className="col-span-1 flex flex-col justify-center">
+          <img src="/footer-image.png" />
+          <a href="https://storyset.com/work" className="text-xs">
+            Work illustrations by Storyset
+          </a>
         </div>
 
-        {/* Right Section */}
-        <div className="space-y-4">
-          <div className="flex flex-col">
-            <span className="text-blue-500 font-bold text-2xl">
-              Give a challenge!{" "}
-            </span>
-            <span className="text-lg"> Always available for a challenge.</span>
+        <div className="space-y-16 px-20">
+          <div className="space-y-8">
+            <h3 className="text-3xl lg:text-2xl font-bold text-blue-500 mb-10">
+              Let's discuss your project.
+            </h3>
+            <div className="flex flex-col text-lg font-medium space-y-4">
+              <ContactInfo icon={phoneIcon} text="+8801405232258" />
+              <ContactInfo icon={emailIcon} text="mrzahidxy@gmail.com" />
+              <ContactInfo icon={addressIcon} text="Dhaka, Bangladesh" />
+            </div>
+            <div className="flex items-center gap-4">
+              <h4 className="text-lg font-semibold">Find me on:</h4>
+              <SocialLink
+                href="https://www.facebook.com/mrzahidxy"
+                icon={facebookIcon}
+                alt="facebook-link"
+              />
+              <SocialLink
+                href="https://www.linkedin.com/in/mrzahidxy"
+                icon={linkedinIcon}
+                alt="linkedin-link"
+              />
+              <SocialLink
+                href="https://github.com/mrzahidxy"
+                icon={githubIcon}
+                alt="github-link"
+              />
+            </div>
           </div>
-          <Formik
-            initialValues={initialValues}
-            onSubmit={handleSubmit}
-            validationSchema={validationSchema}
-          >
-            <Form id="email-form" className="space-y-6">
-              {formData.formDetails.map((data, index) => (
-                <FormInput
-                  key={index}
-                  type={data.type}
-                  id={data.id}
-                  name={data.name}
-                  placeholder={data.placeholder}
-                />
-              ))}
 
-              <div className="w-full">
-                <button
-                  type="submit"
-                  className="w-full py-2 rounded-md bg-blue-500 hover:bg-blue-700 transition ease-in-out duration-300 text-white text-lg font-semibold"
-                >
-                  Send
-                </button>
-              </div>
+          <div className="space-y-4">
+            <div className="flex flex-col">
+              <span className="text-blue-500 font-bold text-2xl">
+                Give a challenge!{" "}
+              </span>
+              <span className=""> Always available for a challenge.</span>
+            </div>
+            <Formik
+              initialValues={initialValues}
+              onSubmit={handleSubmit}
+              validationSchema={validationSchema}
+            >
+              <Form id="email-form" className="space-y-4">
+                {formData.formDetails.map((data, index) => (
+                  <FormInput
+                    key={index}
+                    type={data.type}
+                    id={data.id}
+                    name={data.name}
+                    placeholder={data.placeholder}
+                  />
+                ))}
 
-              {isFormSubmitted && (
-                <div className="text-blue-600 font-semibold">
-                  Thank You. I will contact you soon.
+                <div className="w-full">
+                  <button
+                    type="submit"
+                    className="w-full py-2 rounded-md bg-blue-500 hover:bg-blue-700 transition ease-in-out duration-300 text-white text-lg font-semibold"
+                  >
+                    Send
+                  </button>
                 </div>
-              )}
-            </Form>
-          </Formik>
-        </div>
-      </div>
-      <div className="bg-black text-white">
-        <div className="container flex justify-between py-1 text-xs lg:text-sm">
-          <p>
-            Developed by{" "}
-            <Link to="https://github.com/mrzahidxy">Md Zahid Hasan</Link>{" "}
-          </p>
-          <p>
-            Stack: MERN
-          </p>
+
+                {isFormSubmitted && (
+                  <div className="text-blue-600 font-semibold">
+                    Thank You. I will contact you soon.
+                  </div>
+                )}
+              </Form>
+            </Formik>
+          </div>
         </div>
       </div>
     </footer>
