@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import NavbarLink from "./common/NavbarLink";
@@ -33,50 +33,24 @@ const DarkModeToggle: React.FC<{
   );
 };
 
-// Scroll Function
-// const updateActiveSection = (
-//   setActiveSection: React.Dispatch<React.SetStateAction<string | null>>
-// ) => {
-//   const handleScroll = () => {
-//     const scrollPosition = window.scrollY;
-//     const sections = document.querySelectorAll<HTMLElement>(
-//       "[data-scroll-section]"
-//     );
-
-//     sections.forEach((section) => {
-//       const sectionId = section.getAttribute("id");
-//       const sectionTop = section.offsetTop;
-//       const sectionHeight = section.offsetHeight;
-
-
-//       if (
-//         scrollPosition >= sectionTop - 70 &&
-//         scrollPosition < sectionTop + sectionHeight - 70
-//       ) {
-//         setActiveSection(sectionId);
-//       }
-//     });
-//   };
-
-//   window.addEventListener("scroll", handleScroll);
-//   return () => {
-//     window.removeEventListener("scroll", handleScroll);
-//   };
-// };
-
 const Navbar: React.FC = () => {
   // const [isSticky, setIsSticky] = useState<boolean>(false);
-  const isSticky = false
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const isSticky = false;
+  const storedMode = localStorage.getItem("darkMode");
+  const currentMode = storedMode ? JSON.parse(storedMode) : false;
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(currentMode);
+
+  // Apply dark mode class on component mount and when isDarkMode changes
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  }, [isDarkMode]);
 
   // Dark Mode Toggler Function
   const toggleDarkMode = () => {
     const updatedDarkMode = !isDarkMode;
     setIsDarkMode(updatedDarkMode);
-    document.documentElement.classList.toggle("dark", updatedDarkMode);
     localStorage.setItem("darkMode", JSON.stringify(updatedDarkMode));
   };
-
 
   return (
     <nav
@@ -90,18 +64,21 @@ const Navbar: React.FC = () => {
         </div>
 
         <ul className="hidden lg:flex items-center space-x-10">
-          {["intro", "about", "skills", "projects", "contact"].map((to, i) => (
-            <NavbarLink
-              key={i}
-              to={to}
-              label={to.charAt(0).toUpperCase() + to.slice(1)}
-            />
+          {[
+            { name: "Intro", url: "/" },
+            { name: "About", url: "/about" },
+            { name: "Skills", url: "/skills" },
+            { name: "Projects", url: "/projects" },
+            { name: "Contact", url: "/contact" },
+          ].map((item, i) => (
+            <NavbarLink key={i} to={item.url} label={item.name} />
           ))}
-          <DarkModeToggle
-            isDarkMode={isDarkMode}
-            toggleDarkMode={toggleDarkMode}
-          />
         </ul>
+
+        <DarkModeToggle
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
       </div>
     </nav>
   );
