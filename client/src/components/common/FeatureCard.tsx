@@ -1,7 +1,8 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   project: {
@@ -20,7 +21,9 @@ const FeatureCard: React.FC<Props> = ({ project }) => {
     <div className="block bg-gray-100 rounded-md shadow-md group hover:shadow-xl hover:bg-blue-100 transform hover:scale-102 cursor-pointer relative transition duration-300 ease-in-out">
       <div className="h-40 rounded-t-md overflow-hidden">
         {project.img ? (
-          <img
+          <Image
+          width={100}
+          height={100}
             src={project.img}
             alt=""
             className="w-full h-full object-cover"
@@ -35,11 +38,11 @@ const FeatureCard: React.FC<Props> = ({ project }) => {
         <div className="flex justify-between">
           <h2 className="text-xl font-bold text-blue-500">{project.title}</h2>
           <div className="space-x-2 text-lg">
-            <Link to={project.liveLink}>
+            <Link href={project.liveLink}>
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </Link>
 
-            <Link to={project.githubLink}>
+            <Link href={project.githubLink}>
               <FontAwesomeIcon icon={faGithub} />
             </Link>
           </div>

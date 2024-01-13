@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
 import FeatureCard from "./common/FeatureCard";
 import axios from "axios";
@@ -15,7 +17,7 @@ interface Project {
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState<Boolean>(true);
-  const apiUrl = import.meta.env.VITE_VERCEL_API_URL;
+  const apiUrl =  process.env.NEXT_PUBLIC_API_URL;
 
   const fetchProjects = async () => {
     try {

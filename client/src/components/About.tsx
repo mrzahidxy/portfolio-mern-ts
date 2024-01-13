@@ -1,7 +1,4 @@
-import React from "react";
-import Image from "../assets/image/about.png";
-import Tehnonext from "../assets/image/technonext.jpeg";
-import Intellier from "../assets/image/intellier.png";
+import Image from "next/image";
 
 interface experienceProps {
   title: string;
@@ -15,35 +12,33 @@ const About: React.FC = () => {
       title: "Software Engineer",
       workplace: "Technonext (US-Bangla)",
       duration: "2023-Present",
-      image: Tehnonext,
+      image: "/image/technonext.jpeg",
     },
     {
       title: "Frontend Engineer",
       workplace: "Intelier (Team)",
       duration: "2023-Present",
-      image: Intellier,
+      image: "/image/intellier.png",
     },
   ];
 
   return (
-    <div
-      id="about"
-      data-scroll-section
-      className="container h-screen flex items-center"
-    >
+    <div id="about" className="container h-screen flex items-center">
       <div className="grid lg:grid-cols-3 gap-x-32">
-        <div className="h-[350px] rounded-md bg-transparent lg:bg-gray-800 lg:relative">
-          <img
-            src={Image}
-            alt="image"
-            className="rounded-md overflow-hidden lg:absolute lg:left-14 top-14"
+        <div className="h-[450px] bg-black p-10 rounded-md relative">
+          <Image
+           width={600}
+           height={450}
+            alt=""
+            src="/image/about.png"
+            className="object-cover rounded-md overflow-hidden lg:absolute lg:left-14 top-14 w-full h-full"
           />
         </div>
 
         <div className="lg:col-span-2">
           <div className="space-y-8 text-justify">
             <h3 className="text-blue-500 text-2xl lg:text-4xl font-bold">
-              &lt;a little about me&gt;
+            &lt;a little about me/&gt;
             </h3>
             <div className="space-y-4">
               <p className="lg:text-lg text-justify">
@@ -73,11 +68,14 @@ const About: React.FC = () => {
               <div className="space-y-4">
                 {experiences.map((experience, index) => (
                   <div key={index} className="flex items-center gap-8">
-                    <img
+                    <Image
                       src={experience.image}
                       alt=""
                       className="w-12 h-12 object-contain"
+                      width={100}
+                      height={100}
                     />
+
                     <div className="flex flex-col">
                       <span className="text-xl font-medium">
                         {experience.title}

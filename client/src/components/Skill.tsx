@@ -1,21 +1,4 @@
-import htmlImage from "../assets/icon/html.png";
-import cssImage from "../assets/icon/css.png";
-import sassImage from "../assets/icon/sass.png";
-import tailwindcssJSImage from "../assets/icon/tailwindcss.png";
-import reactJSImage from "../assets/icon/reactjs.png";
-import nextJSImage from "../assets/icon/nextjs.png";
 import SkillCard from "./common/SkillCard";
-
-import JSImage from "../assets/icon/js.png";
-import TSImage from "../assets/icon/ts.png";
-
-import NodeImage from "../assets/icon/node.png";
-import ExpressImage from "../assets/icon/express.png";
-import MongoDBImage from "../assets/icon/mongodb.png";
-import FireBaseImage from "../assets/icon/firebase.png";
-
-import GitImage from "../assets/icon/git.png";
-import FigmaImage from "../assets/icon/figma.png";
 
 interface SkillSet {
   title: string;
@@ -24,68 +7,68 @@ interface SkillSet {
 const frontendSkills: SkillSet[] = [
   {
     title: "SASS",
-    image: sassImage,
+    image: "/icon/sass.png",
   },
   {
     title: "TAILWIND",
-    image: tailwindcssJSImage,
+    image: "/icon/tailwindcss.png",
   },
   {
     title: "RACET JS",
-    image: reactJSImage,
+    image: "/icon/reactjs.png",
   },
   {
     title: "NEXT JS",
-    image: nextJSImage,
+    image: "/icon/nextjs.png",
   },
 ];
 
 const backendSkills: SkillSet[] = [
   {
     title: "NodeJS",
-    image: NodeImage,
+    image: "/icon/node.png",
   },
   {
     title: "ExpressJS",
-    image: ExpressImage,
+    image: "/icon/express.png",
   },
   {
     title: "MongoDB",
-    image: MongoDBImage,
+    image: "/icon/mongodb.png",
   },
   {
     title: "Firebase",
-    image: FireBaseImage,
+    image: "/icon/firebase.png",
   },
 ];
 
 const languageSKills: SkillSet[] = [
   {
     title: "Javascript",
-    image: JSImage,
+    image: "/icon/js.png",
   },
   {
     title: "Typescript",
-    image: TSImage,
+    image: "/icon/ts.png",
   },
   {
     title: "HTML",
-    image: htmlImage,
+    image: "/icon/html.png",
   },
   {
     title: "CSS",
-    image: cssImage,
+    image: "/icon/css.png",
   },
 ];
 
 const otherSKills: SkillSet[] = [
   {
     title: "Git",
-    image: GitImage,
+    image: "/icon/git.png",
   },
   {
     title: "Figma",
-    image: FigmaImage,
+    image: "/icon/git.png",
   },
 ];
 

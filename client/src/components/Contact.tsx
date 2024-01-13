@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
+
 import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import emailjs from "emailjs-com";
@@ -6,13 +9,12 @@ import FormInput from "./common/FormInput";
 import formData from "../JSON/data.json";
 import ContactInfo from "./common/ContatcInfo";
 import SocialLink from "./common/SocialLink";
-import phoneIcon from "../assets/icon/phone.png";
-import emailIcon from "../assets/icon/email.png";
-import addressIcon from "../assets/icon/address.png";
-import facebookIcon from "../assets/icon/facebook.png";
-import linkedinIcon from "../assets/icon/linkedin.png";
-import githubIcon from "../assets/icon/github.png";
-
+import phoneIcon from "/assets/icon/phone.png";
+import emailIcon from "/assets/icon/email.png";
+import addressIcon from "/assets/icon/address.png";
+import facebookIcon from "/assets/icon/facebook.png";
+import linkedinIcon from "/assets/icon/linkedin.png";
+import githubIcon from "/assets/icon/github.png";
 
 interface FormValues {
   name: string;
@@ -66,7 +68,7 @@ const Contact: React.FC = () => {
     <footer className="h-screen flex flex-col justify-center">
       <div id="contact" className="container grid lg:grid-cols-2 gap-x-32">
         <div className="col-span-1 flex flex-col justify-center">
-          <img src="/footer-image.png" />
+          <img src="/image/footer-image.png" />
           <a href="https://storyset.com/work" className="text-xs">
             Work illustrations by Storyset
           </a>
@@ -78,25 +80,20 @@ const Contact: React.FC = () => {
               Let's discuss your project.
             </h3>
             <div className="flex flex-col text-lg font-medium space-y-4">
-              <ContactInfo icon={phoneIcon} text="+8801405232258" />
-              <ContactInfo icon={emailIcon} text="mrzahidxy@gmail.com" />
-              <ContactInfo icon={addressIcon} text="Dhaka, Bangladesh" />
+              <ContactInfo icon="/icon/phone.png" text="+8801405232258" />
+              <ContactInfo icon="/icon/email.png" text="mrzahidxy@gmail.com" />
+              <ContactInfo icon="/icon/address.png" text="Dhaka, Bangladesh" />
             </div>
             <div className="flex items-center gap-4">
               <h4 className="text-lg font-semibold">Find me on:</h4>
               <SocialLink
-                href="https://www.facebook.com/mrzahidxy"
-                icon={facebookIcon}
-                alt="facebook-link"
-              />
-              <SocialLink
                 href="https://www.linkedin.com/in/mrzahidxy"
-                icon={linkedinIcon}
+                icon="/icon/linkedin.png"
                 alt="linkedin-link"
               />
               <SocialLink
                 href="https://github.com/mrzahidxy"
-                icon={githubIcon}
+                icon="/icon/github.png"
                 alt="github-link"
               />
             </div>
